@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+             <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+            <form>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <a [routerLink]="['/cadastro']" class="btn btn-primary">
+                            Nova foto
+                        </a>                        
+                    </span>
+                    <input (keyup)="0" #textoProcurado class="form-control" placeholder="filtrar pelo título da foto">
+                </div>
+            </form>
+        </div>
+        <!-- fim col-md-12 -->
+    </div>
+    <!-- fim row -->
+    <br>
+    <div class="row">
+        <painel *ngFor="let foto of fotos | filtraPorTitulo:textoProcurado.value" titulo="{{foto.titulo | uppercase}}" class="col-md-2">
+            <a [routerLink]="['/cadastro']">
+                <foto titulo="{{foto.titulo}}" url="{{foto.url}}"></foto>
+            </a>
+            <br>
+            <button class="btn btn-danger btn-block" (click)="remove(foto)" >Remover</button> 
+        </painel>
+    </div>
+</div>
