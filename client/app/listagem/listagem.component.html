@@ -19,7 +19,7 @@
     <br>
     <div class="row">
         <painel *ngFor="let foto of fotos | filtraPorTitulo:textoProcurado.value" titulo="{{foto.titulo | uppercase}}" class="col-md-2">
-            <a [routerLink]="['/cadastro']">
+            <a [routerLink]="['/cadastro',foto._id]">
                 <foto titulo="{{foto.titulo}}" url="{{foto.url}}"></foto>
             </a>
             <br>

@@ -3,6 +3,9 @@
 <div class="container">
 
     <form [formGroup]="meuForm" (submit)="cadastrar($event)" class="row">
+
+    <p *ngIf="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
         <div class="col-md-6">
             <div class="form-group">
                 <label>Título</label>
