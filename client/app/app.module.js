@@ -18,6 +18,7 @@ var cadastro_component_1 = require("./cadastro/cadastro.component");
 var listagem_component_1 = require("./listagem/listagem.component");
 var app_routes_1 = require("./app.routes");
 var forms_1 = require("@angular/forms");
+var botao_module_1 = require("./botao/botao.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,8 +26,22 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, foto_module_1.FotoModule, http_1.HttpModule, painel_module_1.PainelModule, app_routes_1.routing, forms_1.FormsModule, forms_1.ReactiveFormsModule],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, listagem_component_1.ListagemComponent, cadastro_component_1.CadastroComponent],
+        imports: [
+            platform_browser_1.BrowserModule,
+            foto_module_1.FotoModule,
+            http_1.HttpModule,
+            painel_module_1.PainelModule,
+            app_routes_1.routing,
+            forms_1.FormsModule,
+            forms_1.ReactiveFormsModule,
+            botao_module_1.BotaoModule
+        ],
+        declarations: [
+            app_component_1.AppComponent,
+            menu_component_1.MenuComponent,
+            listagem_component_1.ListagemComponent,
+            cadastro_component_1.CadastroComponent
+        ],
         bootstrap: [app_component_1.AppComponent] // Primeiro componente carregado do módulo
     })
 ], AppModule);
